@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>zro.ec .• United Kingdom</title>
+<title>United Kingdom .• zero2050.net</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   margin: 0;
   font-family: 'Space Mono', monospace;
@@ -23,14 +24,24 @@ body {
 
 /* Style the side navigation */
 .sidenav {
-  height: 100%;
-  width: 10px;
   position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #f5fff5;
   overflow-x: show;
+  overflow-y: scroll;
+  top: 5px; /*100px to give some room for the sidebar heading (without this, absolute position will make the nav overlap)*/
+  left: 5px; /* you can make this zero and add `padding-left: 15px` */
+  bottom: 15px; /* leave some room for copyright section */
+  right: 75%; /*this may vary from browser to browser (i suggest using the width of the widest scrollbar, then adjust for padding-right)*/
+}
+
+.sidenav .container{
+    max-width: 20px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: 75%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
 }
 
 
@@ -40,18 +51,19 @@ body {
   padding: 16px;
   text-decoration: none;
   display: block;
+  align: left;
+  text-align: left;
 }
 
 /* Change color on hover */
 .sidenav a:hover {
-  background-color: #f5fff5;
   color: black;
 }
 
 /* Style the content */
 .content {
-  margin-left: 100px;
-  padding-left: 20px;
+  margin-left: 25%;
+  margin-right: 0%;
 }
 
 /* Style the profile picture */ 
@@ -72,17 +84,58 @@ body {
   border-radius: 50%;
 }
 
-  .circle {
-  width: 500px;
-  height: 500px;
-  line-height: 500px;
-  border:1px solid red;
-  -moz-border-radius:50%;
-  -webkit-border-radius:50%;
-  font-size: 50px;
-  color: #;
-  text-align: center;
-  background: #
+.footer {
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   padding-right: 10px;
+   padding-bottom: 10px;
+   background-color: transparent;
+   color: black;
+   text-align: right;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+  .accordion {
+  background-color: #f5fff5;
+  color: #000000;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 14px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #f5fff5; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: #f5fff5;
+  overflow: show;
+}
+
+  .accordion:after {
+  content: '▼';
+  color: #000000;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "▲";
 }
   
   <style>
@@ -93,7 +146,7 @@ h1 {
   font-family: 'Space Mono', monospace;
   letter-spacing: 2px;
   color: black;
-  font-size: 40px
+  font-size: 30px
 }
 h2 {
   color: #00ff15;
@@ -104,8 +157,7 @@ h3 {
   font-size: 40px;
 }
 p1 {
-  font-family: 'Comfortaa', cursive;
-  font-size: 40px;
+  font-family: 'Palette Mosaic', cursive;
   }
 p2 {
   font-family: 'Space Mono', monospace;
@@ -113,31 +165,45 @@ p2 {
   }
 p3 {
   font-family: 'Space Mono', monospace;
-  font-size: 70px;
+  font-size: 70px
   }
 </style>
 </head>
 <body>
 
 <div class="sidenav">
-  <a href="https://zro.ec"><img src="0.png" alt="Avatar" class="avatar-small"></a>
-  <img src="uk.png" alt="Avatar" class="avatar">
-  <a><b> Ndc's </b></a>
-  <a href="https://www4.unfccc.int/sites/ndcstaging/PublishedDocuments/United%20Kingdom%20of%20Great%20Britain%20and%20Northern%20Ireland%20First/UK%20Nationally%20Determined%20Contribution.pdf">2020</a>
-  <a href="https://www4.unfccc.int/sites/ndcstaging/PublishedDocuments/United%20Kingdom%20of%20Great%20Britain%20and%20Northern%20Ireland%20First/LV-03-06-EU%20INDC.pdf">2016</a>
-  </div>
+  <a href=""><img src="uk.png" alt="Avatar" class="avatar"></a>
+  <p>United Kingdom</p>
+</div>
 
 <div class="content">
-  <h2></h2>
+  <br>
   <p3 id="demo"></p3>
-  <h3></h3>
+  <br>
+  <br>
+  <br>
+  
   <br>
   <br>
   <br>
   <br>
   <br>
-  <br>
-  <br>
+  <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
   <br>
   <br>
   <br>
@@ -172,33 +238,36 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+ <div class="footer">
+ <p2> Zero Ecosystem is a not for profit company limited by guarantee (Company No. 13349586) registered in England, United Kingdom </p2>
+ <br>
   <img src="favicon.png"
        width="25px";
        height="25px">
 
-  <p2> zro.ec is a not for profit company limited by guarantee (Company No. 13349586) registered in England, United Kingdom </p2>
-
+ <p2> Created in Liverpool </p2>
 </div>
 
 </body>
