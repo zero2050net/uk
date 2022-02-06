@@ -61,6 +61,15 @@
   border-width: 2px;
 }
 
+.avatar-large {
+  vertical-align: middle;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: solid 2px #00ff15;
+  border-width: 2px;
+}
+
 /* Style the profile picture */ 
 .avatar {
   vertical-align: middle;
